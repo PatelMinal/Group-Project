@@ -1,0 +1,25 @@
+{
+  "name": "overseerfileanalyser",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest \"tests\""
+  },
+  "jest": {
+    "collectCoverage": true,
+    "verbose": true
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "acorn": "^6.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.14.1",
+    "jest": "^24.1.0"
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "description": ""
+}
