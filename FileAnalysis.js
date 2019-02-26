@@ -28,9 +28,7 @@ function analyseDocument(document, flaggedWords) {
     date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
     time = ' ' + today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds();
     document.time_finished = date + time;
-
     document.rank = calculateRank(document);
-
     return document;
 }
 
@@ -42,13 +40,13 @@ function calculateRank(document) {
     let myEval = 0;
     myEval = (score / flaggedWordCount) * flagPercent;
 
-    if (eval > 5) {
+    if (myEval > 1) {
         return "Maximum Priority";
-    } else if (eval > 3) {
+    } else if (myEval > 0.75) {
         return "High Priority";
-    } else if (eval > 2) {
+    } else if (myEval > 0.5) {
         return "Medium Priority";
-    } else if (eval > 1) {
+    } else if (myEval > 0.25) {
         return "Low Priority";
     } else {
         return "Lowest Priority";

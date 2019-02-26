@@ -1,4 +1,4 @@
-const fileAnalyser = require('../FileAnalysis2.js');
+const fileAnalyser = require('../FileAnalysis.js');
 var analyseFile = fileAnalyser.analyseDocument;
 
 var testDoc1 = {
@@ -107,6 +107,9 @@ describe("File Analyser", function () {
         test('Document 1 should be set to analysed', () => {
             expect(testReport1.status).toBe("analysed");
         })
+        test('Document 1 should be classified as High Priority', () => {
+            expect(testReport1.rank).toBe("High Priority");
+        })
     })
 
     describe("Testing Document 2", function () {
@@ -122,6 +125,9 @@ describe("File Analyser", function () {
         })
         test('Document 2 should be set to analysed', () => {
             expect(testReport2.status).toBe("analysed");
+        })
+        test('Document 2 should be classified as Lowest Priority', () => {
+            expect(testReport2.rank).toBe("Lowest Priority");
         })
     })
 })
