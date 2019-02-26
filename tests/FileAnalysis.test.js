@@ -104,6 +104,9 @@ describe("File Analyser",function(){
         test('Document 1 should have a flagged percentage of 84.6%', () => {
             expect(testReport1.flagPercent).toBe("0.846");
         })
+        test('Document 1 should be set to analysed', () => {
+            expect(testReport1.status).toBe("analysed");
+        })
     })
 
     describe("Testing Document 2", function(){
@@ -111,11 +114,14 @@ describe("File Analyser",function(){
         test("Document 2 should have a total word count of 118", () => {
             expect(testReport2.wordCount).toBe(118);
         });
-        test("Document 1 should have a score of 15", () => {
+        test("Document 2 should have a score of 15", () => {
             expect(testReport2.score).toBe(15);
         })
-        test('Document 1 should have a flagged percentage of 6.78%', () => {
+        test('Document 2 should have a flagged percentage of 6.78%', () => {
             expect(testReport2.flagPercent).toBe("0.0678");
+        })
+        test('Document 2 should be set to analysed', () => {
+            expect(testReport2.status).toBe("analysed");
         })
     })
 })
