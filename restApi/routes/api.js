@@ -1,15 +1,18 @@
 const express = require('express');
 
 const router = express.Router();
+const Potter = require('../models/harrypotternames');
 
 //get list of names from data base
-router.get('/potter', (req, res) => res.send({ type: 'GET' }));
+router.get('/potter', function(req, res) {
+    Potter.find({}).then(function(potterNames){
+        res.send(potterNames);
+    });
+}); 
 
 router.post('/potter', function (req, res) {
-    console.log(req.body);
-     res.send({ 
-         type: 'POST',
-         name: req.body.name 
-        });
+     Potter.create(req.body).then(function(potter){
+         res.send(potter);
+     });
 });
 module.exports = router;
